@@ -57,8 +57,6 @@ ENV PYTHON_PATH=/usr/local/bin/ \
       git \
     "
 
-COPY 002-posixmodule.diff /
-
 RUN set -ex ;\
     # find MAJOR and MINOR python versions based on $PYTHON_VERSION
     export PYTHON_MAJOR_VERSION=$(echo "${PYTHON_VERSION}" | rev | cut -d"." -f3-  | rev) ;\

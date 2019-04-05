@@ -79,7 +79,6 @@ RUN set -ex ;\
     # echo "@edge-main http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories ;\
     # use pyenv to download and compile specific python version
     git clone --depth 1 https://github.com/pyenv/pyenv /usr/local/lib/pyenv ;\
-    mv /002-posixmodule.diff /usr/local/lib/pyenv/plugins/python-build/share/python-build/patches/2.4.6/Python-2.4.6/002-posixmodule.diff ;\
     # install
     GNU_ARCH="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" ;\
     PYENV_ROOT=/usr/local/lib/pyenv CONFIGURE_OPTS="--build=$GNU_ARCH --enable-loadable-sqlite-extensions --enable-shared --with-system-expat --with-system-ffi --without-ensurepip --with-shared" /usr/local/lib/pyenv/bin/pyenv install $PYTHON_VERSION ;\
